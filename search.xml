@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/01/26/hello-world/</url>
-    <content><![CDATA[<script src=/js/crypto-js.js></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div>]]></content>
-  </entry>
-  <entry>
     <title>趋势交易的方法</title>
     <url>/2022/01/26/%E8%B6%8B%E5%8A%BF%E4%BA%A4%E6%98%93%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>按照冬奥组委的整体安排，这几天，北京高校志愿者陆续入驻驻地。在即将开幕的北京2022年冬奥会和冬残奥会中，<span id="more"></span><br>首都高校将有1.4万名师生作为赛会志愿者，为各国运动员、教练员等提供保障服务。</p>
